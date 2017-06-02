@@ -59,9 +59,6 @@ const config = {
     }, {
       test: /\.scss$/,
       loader: 'style-loader!css-loader?url=false!sass-loader'
-    }, {
-      test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
-      loader: 'file-loader?name=fonts/[name].[ext]'
     }]
   },
   devServer: {
