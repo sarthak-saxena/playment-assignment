@@ -21,6 +21,9 @@ export default function folderReducer(state = initialState, action) {
   switch (action.type) {
     case types.CREATE_SUB_FOLDER:
       let folderName = action.payload + ' ' + _.keys(search).length
+      if(_.includes(_.keys(search), folderName)) {
+        folderName += _.keys(search).length
+      }
       _.merge(search, {
         [folderName]: {
           // id: Math.floor(Date.now() / 1000)
