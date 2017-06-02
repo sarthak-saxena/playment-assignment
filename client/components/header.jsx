@@ -2,6 +2,8 @@ import React from 'react'
 import Button from 'antd/lib/button'
 import { createSubFolder, setLevel, formatLevels } from '../actions/folderActions'
 import { Breadcrumb, Row, Col } from 'antd'
+import keydown from 'react-keydown'
+@keydown
 
 export default class HeaderLayout extends React.Component {
   createFolder = () => {

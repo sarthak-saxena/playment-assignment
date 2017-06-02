@@ -1,9 +1,13 @@
 import React from 'react'
 import HeaderLayout from './header'
-import FolderStructure from './folderStructure'
 import { connect } from 'react-redux'
 import { Layout, Menu } from 'antd'
 const { Header, Content } = Layout
+import keydown from 'react-keydown'
+import FolderStructure from './folderStructure'
+import { formatLevels, setLevel } from '../actions/folderActions'
+
+@keydown
 
 @connect((store) => {
   return {
@@ -11,7 +15,19 @@ const { Header, Content } = Layout
     folderStore: store.folderStore
   }
 })
+
 export default class Main extends React.Component {
+  componentWillReceiveProps = (nextProps) => {
+    const { keydown: { event } } = nextProps
+    const { dispatch, folderStore } = this.props
+    const { level } = folderStore
+    if (event && (event.which === 8 || event.which === 37) &&
+        level !== 'root') {
+      let l = dispatch(formatLevels(level))
+      dispatch(setLevel(l))
+    }
+  }
+
   render() {
     const { dispatch, folderStore } = this.props
     return (
