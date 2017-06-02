@@ -1,7 +1,7 @@
 {
-  "name": "Playment Assignment",
+  "name": "playmentapp",
   "version": "1.0.0",
-  "description": "Playment Assignment",
+  "description": "playment",
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --progress --port 7000"
@@ -29,7 +29,6 @@
     "node-sass": "^4.5.3",
     "path": "^0.12.7",
     "react": "^15.5.4",
-    "react-cookie": "^2.0.6",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",

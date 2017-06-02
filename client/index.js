@@ -3,7 +3,6 @@ import { Provider } from 'react-redux'
 import { Route } from 'react-router'
 import createStore from './store/store.jsx'
 import ReactDOM from 'react-dom'
-import axios from 'axios'
 
 import createHistory from 'history/createBrowserHistory'
 import 'antd/dist/antd.css'
